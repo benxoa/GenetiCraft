@@ -34,7 +34,7 @@ const CreditStore = () => {
       } else if (creditsToBuy <= 0) {
         toast.error("Please specify credits to purchase");
       } else {
-        const res = await fetch("http://localhost:8080/api/purchase-credits", {
+        const res = await fetch("http://47.236.9.48:8080/api/purchase-credits", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -65,7 +65,7 @@ const CreditStore = () => {
   const handlePayment = async () => {
     try {
       const paymentResponse = await fetch(
-        "http://localhost:8080/api/create-payment",
+        "http://47.236.9.48:8080/api/create-payment",
         {
           method: "POST",
         }
@@ -85,7 +85,7 @@ const CreditStore = () => {
   };
 
   const createOrder_PRO = (data) => {
-    return fetch("http://localhost:8080/api/orders", {
+    return fetch("http://47.236.9.48:8080/api/orders", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -107,7 +107,7 @@ const CreditStore = () => {
 
   const onApprove_PRO = async (data) => {
     const res = await fetch(
-      `http://localhost:8080/api/orders/${data.orderID}/capture`,
+      `http://47.236.9.48:8080/api/orders/${data.orderID}/capture`,
       {
         method: "POST",
         headers: {
@@ -128,7 +128,7 @@ const CreditStore = () => {
   };
 
   const createOrder_PRO_MAX = (data) => {
-    return fetch("http://localhost:8080/api/orders", {
+    return fetch("http://47.236.9.48:8080/api/orders", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -147,7 +147,7 @@ const CreditStore = () => {
   };
   const onApprove_PRO_MAX = async (data) => {
     const res = await fetch(
-      `http://localhost:8080/api/orders/${data.orderID}/capture`,
+      `http://47.236.9.48:8080/api/orders/${data.orderID}/capture`,
       {
         method: "POST",
         headers: {
@@ -168,7 +168,7 @@ const CreditStore = () => {
   };
 
   const createOrder_BUSINESS = (data) => {
-    return fetch("http://localhost:8080/api/orders", {
+    return fetch("http://47.236.9.48:8080/api/orders", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -184,7 +184,7 @@ const CreditStore = () => {
   };
   const onApprove_BUSINESS = async (data) => {
     const res = await fetch(
-      `http://localhost:8080/api/orders/${data.orderID}/capture`,
+      `http://47.236.9.48:8080/api/orders/${data.orderID}/capture`,
       {
         method: "POST",
         headers: {

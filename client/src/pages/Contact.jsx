@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import toast, { Toaster } from "react-hot-toast";
 
 
+
 const Contact = () => {
   const [form, setform] = useState({
     email: "",
@@ -15,7 +16,7 @@ const Contact = () => {
   const HandleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:8080/api/contact", {
+      const res = await fetch(`http://47.236.9.48:8080/api/contact`, {
         method: "POST",
         headers: {
           'Content-Type': 'application/json'
@@ -32,7 +33,9 @@ const Contact = () => {
       } else {
         toast.error(`Failed to send form!`);
       }
+      
     } catch (error) {
+
       console.error("Error submitting form:", error);
       toast.error("Error submitting form. Please try again later.");
     }
