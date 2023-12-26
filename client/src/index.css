@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    font-family: "Poppins";
+    margin: 0;
+    padding: 0;
+    
+}
+
+/* Keyframe animations */
+@keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes fade-in-down {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes fade-in-right {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  /* Animation classes */
+  .animate-fade-in-up {
+    animation: fade-in-up 1s ease forwards;
+  }
+  
+  .animate-fade-in-down {
+    animation: fade-in-down 1s ease forwards;
+  }
+  
+  .animate-fade-in-right {
+    animation: fade-in-right 1s ease forwards;
+  }
+
+  @keyframes button-hover {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+    100% { transform: translateY(0); }
+  }
+  
+  /* Animation classes */
+  .animate-hover {
+    transition: background-color 0.3s ease;
+  }
+  
+  .animate-hover:hover {
+    animation: button-hover 0.3s ease;
+  }
+  
+
+  /* Keyframe animations */
+@keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Animation classes */
+  .animate-fade-in-up {
+    animation: fade-in-up 1s ease-out forwards;
+  }
+  
+  /* Apply animation to specific elements */
+  .text-gray-600 > .container > .flex {
+    opacity: 0;
+    animation: fade-in-up 1s ease-out forwards;
+    animation-delay: 0.2s; /* Adjust the delay to stagger the animations */
+  }
+  
+  /* Apply animation to each pricing block individually */
+  .p-4 {
+    opacity: 0;
+    animation: fade-in-up 1s ease-out forwards;
+    animation-delay: 0.4s; /* Adjust the delay to stagger the animations */
+  }
+
+::selection {
+  background-color: #ECE61C;
+  color: #F8F8F8;
+}
