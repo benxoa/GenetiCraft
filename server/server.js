@@ -10,7 +10,7 @@ const path = require('path')
 
 
 app.use(express.json({limit: '50mb'}));
-app.use(cors({origin:"*", credentials: true}))
+app.use(cors({origin:"http://47.236.9.48", credentials: true}))
 const router = require('./router/Router')
 app.use("/api", router)
 
