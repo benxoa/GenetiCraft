@@ -10,7 +10,7 @@ const Pricing = () => {
 
   const getData = async () => {
     try {
-      const res = await axios.get("http://47.236.9.48:8080/api/plan");
+      const res = await axios.get("https://geneticraft.fun:8080/api/plan");
       if (res.status === 200) {
         const data = res.data;
         setCards(data);

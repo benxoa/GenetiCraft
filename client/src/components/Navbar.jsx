@@ -20,7 +20,7 @@ const Navbar = () => {
     const fetchCredits = async () => {
       const userId = cookies.userId;
       try {
-        const res = await fetch("http://47.236.9.48:8080/api/get-credits", {
+        const res = await fetch("https://geneticraft.fun:8080/api/get-credits", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

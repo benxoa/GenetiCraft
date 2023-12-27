@@ -20,7 +20,7 @@ const Login = () => {
 
   const HandleSubmmit = async (e) => {
     e.preventDefault();
-    const res = await fetch("http://47.236.9.48:8080/api/login", {
+    const res = await fetch("https://geneticraft.fun:8080/api/login", {
       method: "POST",
       credentials: "include",
       headers: {
