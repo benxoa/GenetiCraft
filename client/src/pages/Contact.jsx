@@ -16,7 +16,7 @@ const Contact = () => {
   const HandleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`https://geneticraft.fun:8080/api/contact`, {
+      const res = await fetch(`https://47.236.9.48:8080/api/contact`, {
         method: "POST",
         headers: {
           'Content-Type': 'application/json'

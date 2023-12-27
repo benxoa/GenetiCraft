@@ -17,7 +17,7 @@ const Generate = () => {
     const fetchCredits = async () => {
       const userId = cookies.userId;
       try {
-        const res = await fetch("https://geneticraft.fun:8080/api/get-credits", {
+        const res = await fetch("https://47.236.9.48:8080/api/get-credits", {
           method: "POST",
           headers: {
             'Content-Type': 'application/json'
@@ -57,7 +57,7 @@ const Generate = () => {
         try {
           setgeneratingImg(true);
           toast.loading("Generating image...");
-          const response = await fetch("https://geneticraft.fun:8080/api/generate", {
+          const response = await fetch("https://47.236.9.48:8080/api/generate", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -73,7 +73,7 @@ const Generate = () => {
           const base64Image = `data:image/jpeg;base64,${data.photo}`;
           setform({ ...form, photo: base64Image });
 
-          const res = await fetch("https://geneticraft.fun:8080/api/deduct-credits", {
+          const res = await fetch("https://47.236.9.48:8080/api/deduct-credits", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
