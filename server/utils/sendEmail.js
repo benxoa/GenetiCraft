@@ -1,0 +1,20 @@
+const transporter = require("../config/EmailVerification");
+
+const verifyEmail = async (email, username, link) => {
+  return await transporter.sendMail({
+    from: '"GenetiCraft Email Verification 🙌" mewwtwitter@gmail.com',
+    to: email,
+    subject: "Confirm your email address ✔",
+    text: "Hello world?", 
+    html: `<div>
+    <p>Dear ${username}</p>
+    <p>Thank you for signing up for an account.....</p>
+
+    <p>To complete your registreation, Please click on the link below....</p>
+    <a href="${link}">Click Here to Verify</a>
+
+    </div>`,
+  });
+};
+
+module.exports = { verifyEmail };

@@ -34,7 +34,6 @@ const Navbar = () => {
           setCredits(data.credits);
         }
       } catch (error) {
-        console.error("Error fetching credits:", error);
         console.log(cookies.userId);
       }
     };

@@ -29,6 +29,7 @@ const Contact = () => {
       });
   
       if (res.status === 201) {
+        
         toast.success("Form sent successfully!");
       } else {
         toast.error(`Failed to send form!`);

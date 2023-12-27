@@ -18,11 +18,9 @@ const Pricing = () => {
         setCurrentCard1(data[1] || {});
         setCurrentCard2(data[2] || {});
       } else {
-        alert("Error");
       }
     } catch (error) {
       console.error("Error fetching data:", error);
-      alert("Error fetching data. Please try again later.");
     }
   };
 

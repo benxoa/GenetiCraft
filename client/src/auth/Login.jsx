@@ -44,6 +44,9 @@ const Login = () => {
       toast.error("Invaild email or password!");
     } else if (res.status === 500) {
       toast.error("server error");
+    }else if (res.status === 401) {
+      toast.error("Email not Verified!");
+
     }
   };
   return (

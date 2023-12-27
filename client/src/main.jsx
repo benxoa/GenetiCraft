@@ -13,6 +13,9 @@ import Register from './auth/Register.jsx';
 import Footer from './components/Footer.jsx';
 import Generate from './pages/Generate.jsx';
 import CreditStore from './pages/CreditStore.jsx';
+import EmailVerification from './Partials/EmailVerification.jsx';
+import NotFound from './Partials/NotFound.jsx';
+import EmailVerificationFaild from './Partials/EmailVerificationFaild.jsx';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -26,6 +29,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Route path='/login' element={<Login />} />
       <Route path='/generate' element={<Generate />} />
       <Route path='/store' element={<CreditStore />} />
+      <Route path='/email-verfied' element={<EmailVerification />} />
+      <Route path='/email-not-verified' element={<EmailVerificationFaild />} />
+      <Route path='*' element={<NotFound />} />
+
+
 
 
 

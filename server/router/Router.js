@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { Register, Login } = require("../controllers/AuthController");
+const { Register, Login,Verify } = require("../controllers/AuthController");
 const { OpenAi } = require("../controllers/GenerateController");
 const {PurchseCredits} = require("../controllers/PurchaseController");
 const {Credits} = require("../controllers/CreditsController");
@@ -14,6 +14,7 @@ const {CreateOrder,CapureOrder} = require("../controllers/PaymentController")
 
 router.post("/register", Register);
 router.post("/login", Login);
+router.get("/verify", Verify);
 router.post("/generate", OpenAi);
 router.post("/purchase-credits", PurchseCredits);
 router.post("/get-credits", Credits);

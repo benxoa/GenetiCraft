@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
+const statusEnum = require('../../enums/UserStatus');
 
 const geneticraftuserSchema = new mongoose.Schema({
     username: {
@@ -19,7 +20,13 @@ const geneticraftuserSchema = new mongoose.Schema({
     credits: {
         type: Number,
         default: 15 
-    }
+    },
+    status: {
+        type: String,
+        enum: statusEnum,
+        default: statusEnum.INACTIVE
+    },
+    verification:{type: String}
 }, 
 {
     timestamps: true
