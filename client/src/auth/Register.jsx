@@ -39,7 +39,7 @@ const Register = () => {
       });
 
       if (res.status === 201) {
-        toast.success("User created successfully");
+        toast.success("Email sent successfully");
         setTimeout(() => {
           Navigate("/email-sent");
         }, 2000);

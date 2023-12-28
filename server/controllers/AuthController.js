@@ -25,7 +25,7 @@ module.exports.Register = async (req, res) => {
         verification: code,
       });
       await newUser.save();
-      const link = `http://47.236.9.48:8080/api/verify?code=${code}`;
+      const link = `http://geneticraft.fun:8080/api/verify?code=${code}`;
       verifyEmail(email, username, link);
       return res.status(201).json({ message: "User Created" });
     }
