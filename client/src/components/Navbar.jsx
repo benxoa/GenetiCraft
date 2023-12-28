@@ -2,8 +2,11 @@ import React, { useEffect, useState } from "react";
 import logo from "../assets/logo.png";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
+import { Button, Navbar } from "flowbite-react";
 
-const Navbar = () => {
+// import ionicon from 'ion-icon'
+
+const Navbars = () => {
   const [cookies, setCookie, removeCookie] = useCookies([
     "Authtoken",
     "userId",
@@ -40,10 +43,15 @@ const Navbar = () => {
 
     fetchCredits();
   }, []);
+  const [menuState, setMenuState] = useState("menu");
+
+  function onToggleMenu() {
+    setMenuState((prevState) => !prevState);
+  }
 
   return (
     <header>
-      <nav className="bg-white border-gray-200 dark:bg-gray-900">
+      {/* <nav className="bg-white border-gray-200 dark:bg-gray-900">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <Link
             to={"/"}
@@ -90,7 +98,7 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  to="/about"
+                  to="/<Link>about</Link>"
                   className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-yellow-300 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   About
@@ -170,9 +178,69 @@ const Navbar = () => {
             </ul>
           </div>
         </div>
-      </nav>
+      </nav> */}
+
+      <Navbar fluid rounded>
+        <Navbar.Brand to="/">
+          <img src={logo} className="mr-3 h-6 sm:h-9" alt="GenetiCraft Logo" />
+          <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+            GenetiCraft
+          </span>
+        </Navbar.Brand>
+        <div className="flex md:order-2 ">
+          <button className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900">
+            <Link to={"/generate"}>Try Now</Link>
+          </button>
+          <Navbar.Toggle />
+        </div>
+        <Navbar.Collapse>
+          <Navbar.Link className="text-black hover:text-yellow-500">
+            <Link to="/">Home</Link>
+          </Navbar.Link>
+          <Navbar.Link className="text-black hover:text-yellow-500">
+            <Link to="/about">About</Link>
+          </Navbar.Link>
+          <Navbar.Link className="text-black hover:text-yellow-500">
+            <Link to="/contact">Contact</Link>
+          </Navbar.Link>
+          <Navbar.Link className="text-black hover:text-yellow-500">
+            <Link to="/store">Pricing</Link>
+          </Navbar.Link>
+          {isLoggedIn ? (
+            <>
+              <Navbar.Link className="text-black hover:text-yellow-500">
+                <Link to="/generate">Generate</Link>
+              </Navbar.Link>
+              <Navbar.Link className="text-black hover:text-yellow-500">
+                <Link to="/store">Store</Link>
+                <li>
+                  <span className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-yellow-300 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                    Credits: {credits}
+                  </span>
+                </li>
+              </Navbar.Link>
+              <button
+                type="button"
+                onClick={HandleLogout}
+                className="focus:outline-none text-white bg-yellow-300 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900"
+              >
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+            <Navbar.Link className="text-black hover:text-yellow-500">
+            <Link to="/login">Login</Link>
+          </Navbar.Link>
+          <Navbar.Link className="text-black hover:text-yellow-500">
+            <Link to="/register">Register</Link>
+          </Navbar.Link> 
+            </>
+          )}
+        </Navbar.Collapse>
+      </Navbar>
     </header>
   );
 };
 
-export default Navbar;
+export default Navbars;

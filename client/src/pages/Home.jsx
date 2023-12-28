@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import hero from '../assets/hero-img.png'
+import hero from '../assets/hero-img.webp'
 import Pricing from '../components/Pricing'
 import ShowCase from '../components/ShowCase'
 import {Link } from 'react-router-dom'
