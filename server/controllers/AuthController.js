@@ -53,6 +53,7 @@ module.exports.Verify = async (req, res) => {
 
     await user.save();
     const filePath = path.join(__dirname, 'partials', 'verify.html');
+    
     res.sendFile(filePath);
     } catch (error) {
     res.status(500);
