@@ -25,7 +25,7 @@ const Register = () => {
 
   const handleSubmit = async (values, { setSubmitting }) => {
     try {
-      const res = await fetch("https://47.236.9.48:8080/api/register", {
+      const res = await fetch("/api/register", {
         method: "POST",
         credentials: "include",
         headers: {
