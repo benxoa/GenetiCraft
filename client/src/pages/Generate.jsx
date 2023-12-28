@@ -35,7 +35,7 @@ const Generate = () => {
       }
     };
   
-    const intervalId = setInterval(fetchCredits, 10000);
+    const intervalId = setInterval(fetchCredits, 1000);
   
     return () => clearInterval(intervalId);
   }, [cookies.userId]);
@@ -78,7 +78,7 @@ const Generate = () => {
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify({ userId: cookies.userId, amount: 3 }),
+            body: JSON.stringify({ userId: cookies.userId, amount: 4 }),
           });
 
           if (res.status === 200) {
