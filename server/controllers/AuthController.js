@@ -1,6 +1,7 @@
 const bcrypt = require("bcrypt");
 const User = require("../db/models/user.model");
 const status = require("../enums/UserStatus");
+const path = require("path")
 
 const { randomString } = require("../utils/random");
 const { verifyEmail } = require("../utils/sendEmail");
@@ -39,8 +40,8 @@ module.exports.Verify = async (req, res) => {
     const user = await User.findOne({ verification: code });
 
     if (!user) {
-      res.status(400).json({ message: "Code is Invalid, Please reRegister" });
-      return res.redirect('https://www.geneticraft.fun/email-not-verified');
+      res.status(400).json({ message: "Code is Invalid, Please re-Register" });
+      res.sendFile(__dirname + '../partials/failed.html');
 
     }
 
@@ -50,7 +51,7 @@ module.exports.Verify = async (req, res) => {
     user.verification = code;
 
     await user.save();
-    return res.redirect('https://www.geneticraft.fun/email-verfied');
+    res.sendFile(__dirname + '../partials/verify.html');
   } catch (error) {
     res.status(500);
   }
