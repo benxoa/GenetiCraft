@@ -188,9 +188,13 @@ const Navbars = () => {
           </span>
         </Navbar.Brand>
         <div className="flex md:order-2 ">
-          <button className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900">
-            <Link to={"/generate"}>Try Now</Link>
-          </button>
+        {isLoggedIn ? (
+      <Navbar.Toggle />
+    ) : (
+      <button className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900">
+        <Link to={"/generate"}>Try Now</Link>
+      </button>
+    )}
           <Navbar.Toggle />
         </div>
         <Navbar.Collapse>
@@ -203,9 +207,7 @@ const Navbars = () => {
           <Navbar.Link className="text-black hover:text-yellow-500">
             <Link to="/contact">Contact</Link>
           </Navbar.Link>
-          <Navbar.Link className="text-black hover:text-yellow-500">
-            <Link to="/store">Pricing</Link>
-          </Navbar.Link>
+
           {isLoggedIn ? (
             <>
               <Navbar.Link className="text-black hover:text-yellow-500">
@@ -213,16 +215,17 @@ const Navbars = () => {
               </Navbar.Link>
               <Navbar.Link className="text-black hover:text-yellow-500">
                 <Link to="/store">Store</Link>
-                <li>
+
+              </Navbar.Link>
+              <li>
                   <span className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-yellow-300 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
                     Credits: {credits}
                   </span>
                 </li>
-              </Navbar.Link>
               <button
                 type="button"
                 onClick={HandleLogout}
-                className="focus:outline-none text-white bg-yellow-300 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900"
+                className="text-black hover:text-yellow-500"
               >
                 Logout
               </button>
@@ -235,6 +238,7 @@ const Navbars = () => {
           <Navbar.Link className="text-black hover:text-yellow-500">
             <Link to="/register">Register</Link>
           </Navbar.Link> 
+
             </>
           )}
         </Navbar.Collapse>
