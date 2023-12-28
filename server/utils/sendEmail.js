@@ -2,7 +2,7 @@ const transporter = require("../config/EmailVerification");
 
 const verifyEmail = async (email, username, link) => {
   return await transporter.sendMail({
-    from: '"GenetiCraft Email Verification 🙌" mewwtwitter@gmail.com',
+    from: '"GenetiCraft Email Verification 🙌" service@geneticraft.fun',
     to: email,
     subject: "Confirm your email address ✔",
     text: "Hello world?", 
