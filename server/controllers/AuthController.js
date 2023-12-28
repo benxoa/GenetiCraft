@@ -40,8 +40,9 @@ module.exports.Verify = async (req, res) => {
     const user = await User.findOne({ verification: code });
 
     if (!user) {
-      res.status(400).json({ message: "Code is Invalid, Please re-Register" });
-      res.sendFile(__dirname + '../partials/failed.html');
+      // res.status(400).json({ message: "Code is Invalid, Please re-Register" });
+      const filePath = path.join(__dirname, 'partials', 'failed.html');
+      res.sendFile(filePath);
 
     }
 
@@ -51,8 +52,9 @@ module.exports.Verify = async (req, res) => {
     user.verification = code;
 
     await user.save();
-    res.sendFile(__dirname + '../partials/verify.html');
-  } catch (error) {
+    const filePath = path.join(__dirname, 'partials', 'verify.html');
+    res.sendFile(filePath);
+    } catch (error) {
     res.status(500);
   }
 };
