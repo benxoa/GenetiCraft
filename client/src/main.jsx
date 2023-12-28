@@ -16,6 +16,7 @@ import CreditStore from './pages/CreditStore.jsx';
 import EmailVerification from './Partials/EmailVerification.jsx';
 import NotFound from './Partials/NotFound.jsx';
 import EmailVerificationFaild from './Partials/EmailVerificationFaild.jsx';
+import EmailSended from './Partials/EmailSended.jsx';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -31,13 +32,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Route path='/store' element={<CreditStore />} />
       <Route path='/email-verfied' element={<EmailVerification />} />
       <Route path='/email-not-verified' element={<EmailVerificationFaild />} />
+      <Route path='/email-sent' element={<EmailSended />} />
       <Route path='*' element={<NotFound />} />
-
-
-
-
-
-
     </Routes>
     <Footer />
   </BrowserRouter>

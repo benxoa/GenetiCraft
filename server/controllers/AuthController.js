@@ -24,7 +24,7 @@ module.exports.Register = async (req, res) => {
         verification: code,
       });
       await newUser.save();
-      const link = `http://localhost:8080/api/verify?code=${code}`;
+      const link = `http://47.236.9.48::8080/api/verify?code=${code}`;
       verifyEmail(email, username, link);
       return res.status(201).json({ message: "User Created" });
     }
@@ -39,14 +39,16 @@ module.exports.Verify = async (req, res) => {
     const user = await User.findOne({ verification: code });
 
     if (!user) {
-      res.status(400).json({ message: "Code is Invalid" });
+      res.status(400).json({ message: "Code is Invalid, Please reRegister" });
     }
+
+
 
     user.status = status.ACTIVE;
     user.verification = code;
 
     await user.save();
-    return res.status(200);
+    return res.redirect('https://www.geneticraft.fun/email-verified');
   } catch (error) {
     res.status(500);
   }

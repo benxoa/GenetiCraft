@@ -41,7 +41,7 @@ const Register = () => {
       if (res.status === 201) {
         toast.success("User created successfully");
         setTimeout(() => {
-          Navigate("/login");
+          Navigate("/email-sent");
         }, 2000);
       } else if (res.status === 400) {
         toast.error("Username or email already exists!");

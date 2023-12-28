@@ -1,9 +1,29 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 
 const EmailVerification = () => {
+  const [user, setuser] = useState({
+    VERIFIED: false,
+    UNVERIFIED: true
+  })
+
+
   const Navigate = useNavigate();
+
+  // const Check =async()=> {
+  //   const res = await fetch('https://localhost:8080/api/verify', {
+  //     method: 'POST',
+  //   })
+  //   if (res.status === 400){
+  //     console.log("Wrong response")
+
+  //   }else if (res.status === 200){
+  //     user.VERIFIED = true
+  //     console.log("chloo gee")
+  //   }
+  // }
+
   const Redirecting = async () => {
     toast.loading("Redirecting...");
 
