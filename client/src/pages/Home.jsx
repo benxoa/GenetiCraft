@@ -4,6 +4,8 @@ import Pricing from '../components/Pricing'
 import ShowCase from '../components/ShowCase'
 import {Link } from 'react-router-dom'
 import About from '../pages/About'
+import Testimonials from '../components/Testimonials'
+import Newsletter from '../components/Newsletter'
 
 function Home() {
 
@@ -15,7 +17,7 @@ function Home() {
       <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Visualize Your Ideas:
         <br class="hidden lg:inline-block"/> GenetiCraft Ai Powered Digital Art Generator.
       </h1>
-      <p class="mb-8 leading-relaxed animate-fade-in-down">GenetiCraft invites you to explore a world of limitless creativity. Generate stunning images that reflect your imagination. Your canvas awaits!</p>
+      <p class="mb-8 leading-relaxed animate-fade-in-down">Unlock a world of originality with our generative AI. Seamlessly producing digital illustrations and paintings, our AI creates unique, one-of-a-kind artwork, ensuring each piece is entirely plagiarism-free. Say goodbye to worries about authenticity – our innovative technology is dedicated to crafting original compositions, empowering you to explore endless creative possibilities without the fear of replication. Join us in revolutionizing the artistry landscape with AI-generated masterpieces that are truly yours.</p>
       <div class="flex justify-center animate-fade-in">
         <button class="inline-flex text-white bg-yellow-300 border-0 py-2 px-6 focus:outline-none hover:bg-black rounded text-lg animate-hover"><Link to="/generate">Try Now</Link></button>
         <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg animate-hover"><Link to="/about">Learn More</Link></button>
@@ -26,9 +28,12 @@ function Home() {
     </div>
   </div>
 </section>
-<Pricing />
+{/* <Pricing /> */}
 {/* <ShowCase /> */}
 <About/>
+<Testimonials />
+<Newsletter />
+
 
 
 
