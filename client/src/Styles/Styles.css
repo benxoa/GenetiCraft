@@ -1,0 +1,60 @@
+.chat-container {
+    width: 100%;
+    max-width: 400px; /* Adjust this value to your preference */
+    margin: 0 auto; /* Center the chatbot */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  /* Rest of the CSS remains unchanged */
+  
+  .chat-box {
+    padding: 10px;
+    height: 300px;
+    overflow-y: scroll;
+  }
+  
+  .message {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    max-width: 70%;
+    word-wrap: break-word;
+  }
+  
+  .user {
+    align-self: flex-end;
+    background-color: #00a1ff;
+    color: white;
+  }
+  
+  .bot {
+    align-self: flex-start;
+    background-color: #f2f2f2;
+  }
+  
+  .user-input {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+  }
+  
+  .input-field {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .send-button {
+    background-color: #00a1ff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 8px;
+    cursor: pointer;
+  }
+  

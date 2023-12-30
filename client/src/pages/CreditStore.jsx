@@ -276,22 +276,13 @@ const CreditStore = () => {
                   </span>
                   120 Credits
                 </p>
-                <p class="flex items-center text-gray-600 mb-2">
-                  <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2.5"
-                      class="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                  Max 30 Image Generations
-                </p>
+                <p className="flex items-center text-gray-600 mb-2">
+            <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" className="w-3 h-3" viewBox="0 0 24 24">
+                <path d="M20 6L9 17l-5-5"></path>
+              </svg>
+            </span>All Ai Tools
+          </p>
                 <p class="flex items-center text-gray-600 mb-2">
                   <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
                     <svg
@@ -358,22 +349,13 @@ const CreditStore = () => {
                   </span>
                   230 Credits
                 </p>
-                <p class="flex items-center text-gray-600 mb-2">
-                  <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2.5"
-                      class="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                  Max 50+ Image Generations
-                </p>
+                <p className="flex items-center text-gray-600 mb-2">
+            <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" className="w-3 h-3" viewBox="0 0 24 24">
+                <path d="M20 6L9 17l-5-5"></path>
+              </svg>
+            </span>All Ai Tools
+          </p>
                 <p class="flex items-center text-gray-600 mb-2">
                   <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
                     <svg
@@ -456,22 +438,13 @@ const CreditStore = () => {
                   </span>
                   340 Credits
                 </p>
-                <p class="flex items-center text-gray-600 mb-2">
-                  <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2.5"
-                      class="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                  Max 80+ Image Generations
-                </p>
+                <p className="flex items-center text-gray-600 mb-2">
+            <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" className="w-3 h-3" viewBox="0 0 24 24">
+                <path d="M20 6L9 17l-5-5"></path>
+              </svg>
+            </span>All Ai Tools
+          </p>
                 <p class="flex items-center text-gray-600 mb-2">
                   <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
                     <svg

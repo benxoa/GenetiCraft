@@ -38,22 +38,14 @@ module.exports.Verify = async (req, res) => {
   const { code } = req.query;
   try {
     const user = await User.findOne({ verification: code });
-
     if (!user) {
-      // res.status(400).json({ message: "Code is Invalid, Please re-Register" });
       const filePath = path.join(__dirname, 'partials', 'failed.html');
       res.sendFile(filePath);
-
     }
-
-
-
     user.status = status.ACTIVE;
     user.verification = code;
-
     await user.save();
     const filePath = path.join(__dirname, 'partials', 'verify.html');
-    
     res.sendFile(filePath);
     } catch (error) {
     res.status(500);
@@ -89,3 +81,44 @@ module.exports.Login = async (req, res) => {
     res.status(500);
   }
 };
+
+
+
+module.exports.ResetPassword = async (req, res) => {
+  const { userId } = req.body;
+  const { password } = req.body;
+  try {
+    const user = await User.findById(userId);
+    if (!user) {
+      return res.status(401).json({ message: "User not found" });
+    }
+    let newPassword = password.toString();
+    const hashedPassword = await bcrypt.hash(newPassword, 12);
+    user.password = hashedPassword;
+    await user.save();
+    return res.status(200).json({ message: "Password reset successfully" });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: "Server error" });
+  }
+};
+
+// module.exports.ForgotPassword = async (req, res) => {
+//   const { userId } = req.body;
+//   const { password } = req.body;
+//   try {
+//     const user = await User.findById(userId);
+//     if (!user) {
+//       return res.status(401).json({ message: "User not found" });
+//     }
+//     let newPassword = password.toString();
+//     const hashedPassword = await bcrypt.hash(newPassword, 12);
+//     user.password = hashedPassword;
+//     await user.save();
+//     return res.status(200).json({ message: "Password reset successfully" });
+//   } catch (error) {
+//     console.error(error);
+//     return res.status(500).json({ message: "Server error" });
+//   }
+// };
+

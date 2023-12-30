@@ -25,7 +25,7 @@ const Footer = () => {
                     <Link to="/store" class="hover:underline me-4 md:me-6">Pricing</Link>
                 </li>
                 <li>
-                    <Link to="/generate" class="hover:underline me-4 md:me-6">Generative Ai</Link>
+                    <Link to="/ai-tools" class="hover:underline me-4 md:me-6">Generative Ai</Link>
                 </li>
 
             </ul>

@@ -20,23 +20,23 @@ const Generate = () => {
         const res = await fetch("/api/get-credits", {
           method: "POST",
           headers: {
-            'Content-Type': 'application/json'
+            "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            userId: userId
-          })
+            userId: userId,
+          }),
         });
         if (res.status === 200) {
           const data = await res.json();
-          setcredits(data.credits); 
+          setcredits(data.credits);
         }
       } catch (error) {
         console.error("Error fetching credits:", error);
       }
     };
-  
-    const intervalId = setInterval(fetchCredits, 1000);
-  
+
+    const intervalId = setInterval(fetchCredits, 10000);
+
     return () => clearInterval(intervalId);
   }, [cookies.userId]);
 
@@ -51,27 +51,35 @@ const Generate = () => {
   const generateImage = async (e) => {
     e.preventDefault();
     if (form.prompt) {
-      if (credits < 3) {
+      if (credits < 0) {
         toast.error("Insufficient credits to generate more images");
       } else {
         try {
           setgeneratingImg(true);
           toast.loading("Generating image...");
-          const response = await fetch("/api/generate", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ prompt: form.prompt }),
-          });
+          const response = await fetch(
+            `http://localhost:8080/api/imagegenerator`,
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ prompt: form.prompt }),
+            }
+          );
 
           if (!response.ok) {
             toast.error(error.message);
           }
-
           const data = await response.json();
-          const base64Image = `data:image/jpeg;base64,${data.photo}`;
+          const base64Image = `data:image/jpeg;base64,${data.photo.replicate.items[0].image}`;
+
+          
+
+
           setform({ ...form, photo: base64Image });
+          toast.success("Image generated successfully");
+
 
           const res = await fetch("/api/deduct-credits", {
             method: "POST",
@@ -98,7 +106,6 @@ const Generate = () => {
       toast.error("Please Enter The Prompt");
     }
   };
-  
 
   function handleChange(e) {
     setform({ ...form, [e.target.name]: e.target.value });
@@ -115,7 +122,7 @@ const Generate = () => {
     <>
       <Toaster />
       <div className="bg-gray-100 min-h-screen flex flex-col">
-      <br />
+        <br />
 
         <main className="flex-1 flex items-center justify-center">
           <div

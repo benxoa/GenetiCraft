@@ -6,6 +6,7 @@ import {Link } from 'react-router-dom'
 import About from '../pages/About'
 import Testimonials from '../components/Testimonials'
 import Newsletter from '../components/Newsletter'
+import Services from '../components/Services'
 
 function Home() {
 
@@ -15,9 +16,9 @@ function Home() {
   <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
     <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center animate-fade-in-up">
       <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Visualize Your Ideas:
-        <br class="hidden lg:inline-block"/> GenetiCraft Ai Powered Digital Art Generator.
+        <br class="hidden lg:inline-block"/> GenetiCraft All in One Generative Ai Hub.
       </h1>
-      <p class="mb-8 leading-relaxed animate-fade-in-down">Unlock a world of originality with our generative AI. Seamlessly producing digital illustrations and paintings, our AI creates unique, one-of-a-kind artwork, ensuring each piece is entirely plagiarism-free. Say goodbye to worries about authenticity – our innovative technology is dedicated to crafting original compositions, empowering you to explore endless creative possibilities without the fear of replication. Join us in revolutionizing the artistry landscape with AI-generated masterpieces that are truly yours.</p>
+      <p class="mb-8 leading-relaxed animate-fade-in-down">"GenetiCraft: All in One Generative AI Hub" is a pioneering platform revolutionizing creative and technical endeavors. This comprehensive hub, developed by a visionary team, integrates cutting-edge generative AI tools. From art and design to code generation and content creation, GenetiCraft serves as a central nexus for diverse AI-powered solutions. Seamlessly merging innovation with accessibility, it empowers users across disciplines to explore, experiment, and excel in their creative and technical pursuits, setting new benchmarks in generative AI capabilities.</p>
       <div class="flex justify-center animate-fade-in">
         <button class="inline-flex text-white bg-yellow-300 border-0 py-2 px-6 focus:outline-none hover:bg-black rounded text-lg animate-hover"><Link to="/generate">Try Now</Link></button>
         <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg animate-hover"><Link to="/about">Learn More</Link></button>
@@ -32,6 +33,7 @@ function Home() {
 {/* <ShowCase /> */}
 <About/>
 <Testimonials />
+<Services />
 <Newsletter />
 
 

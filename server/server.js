@@ -11,9 +11,14 @@ const path = require('path')
 
 app.use(express.json({limit: '50mb'}));
 app.use(cors({
-  origin: ['https://www.geneticraft.fun'],
+  origin: "http://localhost:5173",
+  optionsSuccessStatus: 200,
   credentials: true
-}));
+}))
+// app.use(cors({
+//   origin: ['https://www.geneticraft.fun'],
+//   credentials: true
+// }));
 const router = require('./router/Router')
 app.use("/api", router)
 

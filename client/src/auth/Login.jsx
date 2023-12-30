@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 
 
+
 const Login = () => {
   const [cookies, setCookie] = useCookies(['userId']);
 
@@ -20,7 +21,7 @@ const Login = () => {
 
   const HandleSubmmit = async (e) => {
     e.preventDefault();
-    const res = await fetch("/api/login", {
+    const res = await fetch(`http://localhost:8080/api/login`, {
       method: "POST",
       credentials: "include",
       headers: {
@@ -37,7 +38,7 @@ const Login = () => {
       setCookie('userId', data.userId, {path: '/', expires: new Date(Date.now() + 2592000000)})
       toast.success("Logged in successfully!");
       setTimeout(() => {
-        Navigate("/generate");
+        Navigate("/ai-tools");
         window.location.reload()
       }, 1300);
     } else if (res.status === 400) {
