@@ -2,16 +2,15 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
 
-useEffect(() => {
-    const token = cookies.Authtoken;
-    if (!token) {
-      Navigate("/login");
-    }
-  }, [cookies.Authtoken]);
+
+
 
 
 const PlagrismGenerate = () => {
+  const Navigate = useNavigate();
+
   const [userInput, setUserInput] = useState("");
   const [plgper, setplgper] = useState("Plagrism N/A");
 //   const [unique, setunique] = useState(0);
@@ -21,6 +20,12 @@ const PlagrismGenerate = () => {
 
   const [cookies, setCookie, removeCookie] = useCookies(["Authtoken"]);
   const [credits, setcredits] = useState(0);
+  useEffect(() => {
+    const token = cookies.Authtoken;
+    if (!token) {
+      Navigate("/login");
+    }
+  }, [cookies.Authtoken]);
 
   useEffect(() => {
     const fetchCredits = async () => {
@@ -117,6 +122,7 @@ const PlagrismGenerate = () => {
   const handleUserInputChange = (event) => {
     setUserInput(event.target.value);
   };
+
 
   return (
     <>

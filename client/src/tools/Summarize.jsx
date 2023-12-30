@@ -2,8 +2,12 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
 
 const Summarize = () => {
+  const Navigate = useNavigate();
+  
+
   const [userInput, setUserInput] = useState("");
   const [firstDropdownValue, setFirstDropdownValue] = useState("");
   const [secondDropdownValue, setSecondDropdownValue] = useState("");
