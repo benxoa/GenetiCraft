@@ -102,6 +102,14 @@ const ArticleGenerator = () => {
     setUserInput(event.target.value);
   };
 
+  useEffect(() => {
+    const token = cookies.Authtoken;
+    if (!token) {
+      Navigate("/login");
+    }
+  }, [cookies.Authtoken]);
+
+
 
 
   return (

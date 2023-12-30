@@ -3,6 +3,14 @@ import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import { useCookies } from "react-cookie";
 
+useEffect(() => {
+    const token = cookies.Authtoken;
+    if (!token) {
+      Navigate("/login");
+    }
+  }, [cookies.Authtoken]);
+
+
 const PlagrismGenerate = () => {
   const [userInput, setUserInput] = useState("");
   const [plgper, setplgper] = useState("Plagrism N/A");
