@@ -18,7 +18,7 @@ const PlagrismGenerate = () => {
     const fetchCredits = async () => {
       const userId = cookies.userId;
       try {
-        const res = await fetch("http://localhost:8080/api/get-credits", {
+        const res = await fetch("/api/get-credits", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -59,7 +59,7 @@ const PlagrismGenerate = () => {
       toast.loading("Checking Plagrism...");
 
       const response = await fetch(
-        "http://localhost:8080/api/plagrismchecker",
+        "/api/plagrismchecker",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -81,7 +81,7 @@ const PlagrismGenerate = () => {
         // setunique(data.message.winstonai.plagia_score);
         setTextSorce(data.message.winstonai.items[0].candidates[0].url);
 
-        const res = await fetch("http://localhost:8080/api/deduct-credits", {
+        const res = await fetch("/api/deduct-credits", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

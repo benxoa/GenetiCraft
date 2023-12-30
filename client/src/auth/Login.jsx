@@ -21,7 +21,7 @@ const Login = () => {
 
   const HandleSubmmit = async (e) => {
     e.preventDefault();
-    const res = await fetch(`http://localhost:8080/api/login`, {
+    const res = await fetch(`/api/login`, {
       method: "POST",
       credentials: "include",
       headers: {

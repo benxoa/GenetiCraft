@@ -58,7 +58,7 @@ const Generate = () => {
           setgeneratingImg(true);
           toast.loading("Generating image...");
           const response = await fetch(
-            `http://localhost:8080/api/imagegenerator`,
+            `/api/imagegenerator`,
             {
               method: "POST",
               headers: {

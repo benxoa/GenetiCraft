@@ -14,7 +14,7 @@ const ArticleGenerator = () => {
     const fetchCredits = async () => {
       const userId = cookies.userId;
       try {
-        const res = await fetch("http://localhost:8080/api/get-credits", {
+        const res = await fetch("/api/get-credits", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -52,7 +52,7 @@ const ArticleGenerator = () => {
       toast.loading("Generating your Article...");
 
       const response = await axios.post(
-        "http://localhost:8080/api/articlegenerator",
+        "/api/articlegenerator",
         {
           text: userInput,
         }
@@ -67,7 +67,7 @@ const ArticleGenerator = () => {
         // console.log(response)
         // console.log(data)
 
-        const res = await fetch("http://localhost:8080/api/deduct-credits", {
+        const res = await fetch("/api/deduct-credits", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

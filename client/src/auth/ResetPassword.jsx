@@ -37,7 +37,7 @@ const ResetPassword = () => {
 
   const handleSubmit = async (values, { setSubmitting }) => {
     try {
-      const res = await fetch("http://localhost:8080/api/reset-password", {
+      const res = await fetch("/api/reset-password", {
         method: "POST",
         credentials: "include",
         headers: {
