@@ -52,12 +52,13 @@ const Navbars = () => {
     <header>
       <Navbar fluid rounded>
         <Navbar.Brand >
-        <Link to="/">
+        
 <img src={logo} className="mr-3 h-6 sm:h-9" alt="GenetiCraft Logo" />
+<NavLink to="/">
           <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
             GenetiCraft
           </span>
-        </Link>
+        </NavLink>
           
         </Navbar.Brand>
         <div className=" flex md:order-2 ">
