@@ -51,11 +51,14 @@ const Navbars = () => {
   return (
     <header>
       <Navbar fluid rounded>
-        <Navbar.Brand to="/">
-          <img src={logo} className="mr-3 h-6 sm:h-9" alt="GenetiCraft Logo" />
+        <Navbar.Brand >
+        <Link to="/">
+<img src={logo} className="mr-3 h-6 sm:h-9" alt="GenetiCraft Logo" />
           <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
             GenetiCraft
           </span>
+        </Link>
+          
         </Navbar.Brand>
         <div className=" flex md:order-2 ">
           {isLoggedIn ? (
