@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import hero from '../assets/hero-img.webp'
 import Pricing from '../components/Pricing'
-import ShowCase from '../components/ShowCase'
 import {Link } from 'react-router-dom'
 import About from '../pages/About'
 import Testimonials from '../components/Testimonials'
