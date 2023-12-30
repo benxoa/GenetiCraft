@@ -12,15 +12,12 @@ import Register from './auth/Register.jsx';
 import Footer from './components/Footer.jsx';
 import Generate from './tools/Generate.jsx';
 import CreditStore from './pages/CreditStore.jsx';
-import EmailVerification from './Partials/EmailVerification.jsx';
 import NotFound from './Partials/NotFound.jsx';
-import EmailVerificationFaild from './Partials/EmailVerificationFaild.jsx';
 import EmailSended from './Partials/EmailSended.jsx';
 import Summarize from './tools/Summarize.jsx';
 import UserProfile from './users/UserProfile.jsx';
 import ResetPassword from './auth/ResetPassword.jsx';
 import Services from './components/Services.jsx';
-import ChatBot from './tools/ChatBot.jsx';
 import  PlagrsimGenerate  from '../src/tools/PlagrismGenerate.jsx';
 import ArticleGenerator from './tools/ArticleGenerator.jsx';
 
@@ -36,8 +33,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Route path='/login' element={<Login />} />
       <Route path='/imagegenerate' element={<Generate />} />
       <Route path='/store' element={<CreditStore />} />
-      <Route path='/email-verfied' element={<EmailVerification />} />
-      <Route path='/email-not-verified' element={<EmailVerificationFaild />} />
       <Route path='/email-sent' element={<EmailSended />} />
       <Route path='/summerygenerate' element={<Summarize />} />
       <Route path='/profile' element={<UserProfile />} />
