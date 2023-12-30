@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../assets/download.jpg";
+import image from "../assets/download.webp";
 import text from "../assets/text.jpg";
 import code from "../assets/code.jpg";
 import summary from "../assets/summary.png";
