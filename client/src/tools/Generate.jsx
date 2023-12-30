@@ -51,7 +51,7 @@ const Generate = () => {
   const generateImage = async (e) => {
     e.preventDefault();
     if (form.prompt) {
-      if (credits < 0) {
+      if (credits < 4) {
         toast.error("Insufficient credits to generate more images");
       } else {
         try {
