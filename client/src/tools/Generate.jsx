@@ -55,10 +55,9 @@ const Generate = () => {
   const generateImage = async (e) => {
     e.preventDefault();
     if (form.prompt) {
-      if (cookies.Authtoken) {
-        if (credits < 4) {
-          toast.error("Insufficient credits to generate more images");
-        }
+
+      if (credits > 4) {
+        toast.error("You Dont have enought credits!")
       } else {
         try {
           setgeneratingImg(true);
@@ -110,12 +109,12 @@ const Generate = () => {
     setform({ ...form, [e.target.name]: e.target.value });
   }
 
-  // useEffect(() => {
-  //   const token = cookies.Authtoken;
-  //   if (!token) {
-  //     Navigate("/login");
-  //   }
-  // }, [cookies.Authtoken]);
+  useEffect(() => {
+    const token = cookies.Authtoken;
+    if (!token) {
+      Navigate("/login");
+    }
+  }, [cookies.Authtoken]);
 
   return (
     <>
