@@ -119,12 +119,12 @@ const Generate = () => {
     setform({ ...form, [e.target.name]: e.target.value });
   }
 
-  useEffect(() => {
-    const token = cookies.Authtoken;
-    if (!token) {
-      Navigate("/login");
-    }
-  }, [cookies.Authtoken]);
+  // useEffect(() => {
+  //   const token = cookies.Authtoken;
+  //   if (!token) {
+  //     Navigate("/login");
+  //   }
+  // }, [cookies.Authtoken]);
 
 
   useEffect(() => {
