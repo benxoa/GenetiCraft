@@ -56,7 +56,7 @@ const Generate = () => {
     e.preventDefault();
     if (form.prompt) {
 
-      if (credits > 4) {
+      if (credits < 4) {
         toast.error("You Dont have enought credits!")
       } else {
         try {
