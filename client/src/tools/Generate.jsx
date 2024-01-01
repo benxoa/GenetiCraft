@@ -42,41 +42,34 @@ const Generate = () => {
 
   const Navigate = useNavigate();
   const downloadImage = () => {
-    if(!cookies.Authtoken ){
-      toast.error("Login Or Register to Donwlaod Image")
-    }else {
+    if (!cookies.Authtoken) {
+      toast.error("Login Or Register to Donwlaod Image");
+    } else {
       const link = document.createElement("a");
-    link.href = form.photo;
-    link.download = "generated_image.jpg";
-    link.click();
+      link.href = form.photo;
+      link.download = "generated_image.jpg";
+      link.click();
     }
-
-
-    
   };
 
   const generateImage = async (e) => {
     e.preventDefault();
     if (form.prompt) {
-      if(cookies.Authtoken){
+      if (cookies.Authtoken) {
         if (credits < 4) {
-        toast.error("Insufficient credits to generate more images");
-      } 
-      }
-     else {
+          toast.error("Insufficient credits to generate more images");
+        }
+      } else {
         try {
           setgeneratingImg(true);
           toast.loading("Generating image...");
-          const response = await fetch(
-            `/api/imagegenerator`,
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ prompt: form.prompt }),
-            }
-          );
+          const response = await fetch(`/api/imagegenerator`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ prompt: form.prompt }),
+          });
 
           if (!response.ok) {
             toast.error(error.message);
@@ -84,12 +77,8 @@ const Generate = () => {
           const data = await response.json();
           const base64Image = `data:image/jpeg;base64,${data.photo.replicate.items[0].image}`;
 
-          
-
-
           setform({ ...form, photo: base64Image });
           toast.success("Image generated successfully");
-
 
           const res = await fetch("/api/deduct-credits", {
             method: "POST",
@@ -128,20 +117,6 @@ const Generate = () => {
   //   }
   // }, [cookies.Authtoken]);
 
-
-  // useEffect(() => {
-  //   const script = document.createElement('script');
-  //   script.src = "//pl21984832.toprevenuegate.com/713ad819505cdc693258be63964d9103/invoke.js";
-  //   script.async = true;
-  //   script.setAttribute('data-cfasync', 'false');
-
-  //   const container = document.getElementById('container-713ad819505cdc693258be63964d9103');
-  //   container.appendChild(script);
-
-  //   return () => {
-  //     container.removeChild(script);
-  //   };
-  // }, []);
   return (
     <>
       <Toaster />
@@ -149,28 +124,12 @@ const Generate = () => {
         <br />
 
         <main className="flex-1 flex items-center justify-center">
-        <div className="w-1/4 p-4">
-        <iframe
-  data-aa='2291118'
-  src='//ad.a-ads.com/2291118?size=300x600'
-  style={{
-    width: '300px',
-    height: '600px',
-    border: '0px',
-    padding: '0',
-    overflow: 'hidden',
-    backgroundColor: 'transparent'
-  }}
-></iframe>
-          </div>
+          <div className="w-1/4 p-4"></div>
           <div
             className="max-w-4xl w-full p-8 bg-white rounded-lg shadow"
             style={{ minHeight: "80vh" }}
           >
-          
             <h1 className="text-3xl font-semibold mb-6">Generate Image</h1>
-
-            
 
             <form onSubmit={generateImage} className="flex flex-col space-y-4">
               <label htmlFor="prompt" className="text-lg font-medium">
@@ -193,7 +152,6 @@ const Generate = () => {
             </form>
 
             <br />
-           
 
             <div className=" w-full h-screen relative bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  p-3  flex justify-center items-center">
               {form.photo ? (
@@ -212,9 +170,6 @@ const Generate = () => {
                 />
               )}
             </div>
-            
-
-
 
             {form.photo && (
               <>
@@ -227,25 +182,10 @@ const Generate = () => {
                 </button>
               </>
             )}
-            </div>
+          </div>
 
           {/* Right Column for Ads */}
-          <div className="w-1/4 p-4">
-          <iframe
-  data-aa='2291118'
-  src='//ad.a-ads.com/2291118?size=300x600'
-  style={{
-    width: '300px',
-    height: '600px',
-    border: '0px',
-    padding: '0',
-    overflow: 'hidden',
-    backgroundColor: 'transparent'
-  }}
-></iframe>
-            
-       
-          </div>
+          <div className="w-1/4 p-4"></div>
         </main>
         <br />
       </div>
