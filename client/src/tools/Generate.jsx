@@ -152,9 +152,9 @@ const Generate = () => {
         <div className="w-1/4 p-4">
         <iframe
   data-aa='2291118'
-  src='//ad.a-ads.com/2291118?size=160x600'
+  src='//ad.a-ads.com/2291118?size=300x600'
   style={{
-    width: '160px',
+    width: '300px',
     height: '600px',
     border: '0px',
     padding: '0',
@@ -162,9 +162,6 @@ const Generate = () => {
     backgroundColor: 'transparent'
   }}
 ></iframe>
-            <div className="bg-yellow-200 h-96 flex justify-center items-center">
-              <span className="text-lg font-semibold">Left Ad Placeholder</span>
-            </div>
           </div>
           <div
             className="max-w-4xl w-full p-8 bg-white rounded-lg shadow"
@@ -236,9 +233,9 @@ const Generate = () => {
           <div className="w-1/4 p-4">
           <iframe
   data-aa='2291118'
-  src='//ad.a-ads.com/2291118?size=160x600'
+  src='//ad.a-ads.com/2291118?size=300x600'
   style={{
-    width: '160px',
+    width: '300px',
     height: '600px',
     border: '0px',
     padding: '0',
@@ -246,9 +243,7 @@ const Generate = () => {
     backgroundColor: 'transparent'
   }}
 ></iframe>
-            <div className="bg-yellow-200 h-96 flex justify-center items-center">
-              <span className="text-lg font-semibold">Right Ad Placeholder</span>
-            </div>
+            
        
           </div>
         </main>
