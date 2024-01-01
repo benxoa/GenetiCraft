@@ -120,16 +120,25 @@ const Generate = () => {
 
 
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = "https://pl21984832.toprevenuegate.com/713ad819505cdc693258be63964d9103/invoke.js";
-    script.async = true;
-    script.setAttribute('data-cfasync', 'false');
-    
-    const container = document.getElementById('container-713ad819505cdc693258be63964d9103');
-    container.appendChild(script);
+    // Load second ad script
+    const script2 = document.createElement('script');
+    script2.type = "text/javascript";
+    script2.innerHTML = `
+      var atOptions = {
+        'key' : 'd3f42a6e0dae066a16c42e55b86f1733',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+      };
+      document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/d3f42a6e0dae066a16c42e55b86f1733/invoke.js"></scr' + 'ipt>');
+    `;
+
+    const container2 = document.getElementById('container-for-second-ad');
+    container2.appendChild(script2);
 
     return () => {
-      container.removeChild(script);
+      container2.removeChild(script2);
     };
   }, []);
   return (
@@ -166,8 +175,8 @@ const Generate = () => {
             </form>
 
             <br />
-            <div id="container-713ad819505cdc693258be63964d9103">
-        {/* This is where the ad will be placed */}
+            <div id="container-for-second-ad">
+        {/* This is where the second ad will be placed */}
       </div>
 
             <div className=" w-full h-screen relative bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  p-3  flex justify-center items-center">
@@ -187,6 +196,9 @@ const Generate = () => {
                 />
               )}
             </div>
+            <div id="container-for-second-ad">
+        {/* This is where the second ad will be placed */}
+      </div>
 
 
 
@@ -201,6 +213,9 @@ const Generate = () => {
                 </button>
               </>
             )}
+            <div id="container-for-second-ad">
+        {/* This is where the second ad will be placed */}
+      </div>
           </div>
         </main>
         <br />
