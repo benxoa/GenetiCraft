@@ -118,6 +118,19 @@ const Generate = () => {
     }
   }, [cookies.Authtoken]);
 
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = "//pl21984832.toprevenuegate.com/713ad819505cdc693258be63964d9103/invoke.js";
+    script.async = true;
+    script.setAttribute('data-cfasync', 'false');
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <>
       <Toaster />
@@ -152,6 +165,10 @@ const Generate = () => {
             </form>
 
             <br />
+            <div id="container-713ad819505cdc693258be63964d9103">
+        {/* This is where the ad will be placed */}
+      </div>
+
             <div className=" w-full h-screen relative bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  p-3  flex justify-center items-center">
               {form.photo ? (
                 <>
@@ -169,6 +186,9 @@ const Generate = () => {
                 />
               )}
             </div>
+
+
+
             {form.photo && (
               <>
                 <br />
