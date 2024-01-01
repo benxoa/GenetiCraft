@@ -13,39 +13,44 @@ const Generate = () => {
   const [cookies, setCookie, removeCookie] = useCookies(["Authtoken"]);
   const [credits, setcredits] = useState(0);
 
-  useEffect(() => {
-    const fetchCredits = async () => {
-      const userId = cookies.userId;
-      try {
-        const res = await fetch("/api/get-credits", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            userId: userId,
-          }),
-        });
-        if (res.status === 200) {
-          const data = await res.json();
-          setcredits(data.credits);
-        }
-      } catch (error) {
-        console.error("Error fetching credits:", error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchCredits = async () => {
+  //     const userId = cookies.userId;
+  //     try {
+  //       const res = await fetch("/api/get-credits", {
+  //         method: "POST",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //         body: JSON.stringify({
+  //           userId: userId,
+  //         }),
+  //       });
+  //       if (res.status === 200) {
+  //         const data = await res.json();
+  //         setcredits(data.credits);
+  //       }
+  //     } catch (error) {
+  //       console.error("Error fetching credits:", error);
+  //     }
+  //   };
 
-    const intervalId = setInterval(fetchCredits, 10000);
+  //   const intervalId = setInterval(fetchCredits, 10000);
 
-    return () => clearInterval(intervalId);
-  }, [cookies.userId]);
+  //   return () => clearInterval(intervalId);
+  // }, [cookies.userId]);
 
   const Navigate = useNavigate();
   const downloadImage = () => {
+    if(!cookies.Authtoken ){
+      toast.error("Login Or Register to Donwlaod Image")
+    }
     const link = document.createElement("a");
     link.href = form.photo;
     link.download = "generated_image.jpg";
     link.click();
+
+    
   };
 
   const generateImage = async (e) => {
@@ -187,7 +192,9 @@ const Generate = () => {
                 />
               )}
             </div>
-           
+            <div id="container-713ad819505cdc693258be63964d9103">
+        {/* This is where the second ad will be placed */}
+      </div>
 
 
 
