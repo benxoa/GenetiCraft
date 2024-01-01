@@ -150,8 +150,18 @@ const Generate = () => {
 
         <main className="flex-1 flex items-center justify-center">
         <div className="w-1/4 p-4">
-        <iframe data-aa='2291118' src='//ad.a-ads.com/2291118?size=160x600' style='width:160px; height:600px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
-
+        <iframe
+  data-aa='2291118'
+  src='//ad.a-ads.com/2291118?size=160x600'
+  style={{
+    width: '160px',
+    height: '600px',
+    border: '0px',
+    padding: '0',
+    overflow: 'hidden',
+    backgroundColor: 'transparent'
+  }}
+></iframe>
             <div className="bg-yellow-200 h-96 flex justify-center items-center">
               <span className="text-lg font-semibold">Left Ad Placeholder</span>
             </div>
@@ -224,8 +234,18 @@ const Generate = () => {
 
           {/* Right Column for Ads */}
           <div className="w-1/4 p-4">
-          <iframe data-aa='2291118' src='//ad.a-ads.com/2291118?size=160x600' style='width:160px; height:600px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
-
+          <iframe
+  data-aa='2291118'
+  src='//ad.a-ads.com/2291118?size=160x600'
+  style={{
+    width: '160px',
+    height: '600px',
+    border: '0px',
+    padding: '0',
+    overflow: 'hidden',
+    backgroundColor: 'transparent'
+  }}
+></iframe>
             <div className="bg-yellow-200 h-96 flex justify-center items-center">
               <span className="text-lg font-semibold">Right Ad Placeholder</span>
             </div>
