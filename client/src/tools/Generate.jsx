@@ -121,16 +121,17 @@ const Generate = () => {
 
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = "//pl21984832.toprevenuegate.com/713ad819505cdc693258be63964d9103/invoke.js";
+    script.src = "https://pl21984832.toprevenuegate.com/713ad819505cdc693258be63964d9103/invoke.js";
     script.async = true;
     script.setAttribute('data-cfasync', 'false');
-    document.body.appendChild(script);
+    
+    const container = document.getElementById('container-713ad819505cdc693258be63964d9103');
+    container.appendChild(script);
 
     return () => {
-      document.body.removeChild(script);
+      container.removeChild(script);
     };
   }, []);
-
   return (
     <>
       <Toaster />
