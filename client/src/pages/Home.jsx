@@ -39,6 +39,7 @@ function Home() {
   const generateImage = async (e) => {
     e.preventDefault();
     if (form.prompt) {
+      
 
        
         try {
