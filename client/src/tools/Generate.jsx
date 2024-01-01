@@ -149,11 +149,21 @@ const Generate = () => {
         <br />
 
         <main className="flex-1 flex items-center justify-center">
+        <div className="w-1/4 p-4">
+        <iframe data-aa='2291118' src='//ad.a-ads.com/2291118?size=160x600' style='width:160px; height:600px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+
+            <div className="bg-yellow-200 h-96 flex justify-center items-center">
+              <span className="text-lg font-semibold">Left Ad Placeholder</span>
+            </div>
+          </div>
           <div
             className="max-w-4xl w-full p-8 bg-white rounded-lg shadow"
             style={{ minHeight: "80vh" }}
           >
+          
             <h1 className="text-3xl font-semibold mb-6">Generate Image</h1>
+
+            
 
             <form onSubmit={generateImage} className="flex flex-col space-y-4">
               <label htmlFor="prompt" className="text-lg font-medium">
@@ -210,6 +220,15 @@ const Generate = () => {
                 </button>
               </>
             )}
+            </div>
+
+          {/* Right Column for Ads */}
+          <div className="w-1/4 p-4">
+          <iframe data-aa='2291118' src='//ad.a-ads.com/2291118?size=160x600' style='width:160px; height:600px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+
+            <div className="bg-yellow-200 h-96 flex justify-center items-center">
+              <span className="text-lg font-semibold">Right Ad Placeholder</span>
+            </div>
        
           </div>
         </main>
