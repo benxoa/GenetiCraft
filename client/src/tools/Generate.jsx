@@ -121,11 +121,11 @@ const Generate = () => {
 
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = "//www.topcreativeformat.com/d3f42a6e0dae066a16c42e55b86f1733/invoke.js";
-    script.type = "text/javascript";
+    script.src = "//pl21984832.toprevenuegate.com/713ad819505cdc693258be63964d9103/invoke.js";
     script.async = true;
+    script.setAttribute('data-cfasync', 'false');
 
-    const container = document.getElementById('container-for-second-ad');
+    const container = document.getElementById('container-713ad819505cdc693258be63964d9103');
     container.appendChild(script);
 
     return () => {
@@ -166,7 +166,7 @@ const Generate = () => {
             </form>
 
             <br />
-            <div id="container-for-second-ad">
+            <div id="container-713ad819505cdc693258be63964d9103">
         {/* This is where the second ad will be placed */}
       </div>
 
