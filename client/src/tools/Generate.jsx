@@ -120,25 +120,16 @@ const Generate = () => {
 
 
   useEffect(() => {
-    // Load second ad script
-    const script2 = document.createElement('script');
-    script2.type = "text/javascript";
-    script2.innerHTML = `
-      var atOptions = {
-        'key' : 'd3f42a6e0dae066a16c42e55b86f1733',
-        'format' : 'iframe',
-        'height' : 60,
-        'width' : 468,
-        'params' : {}
-      };
-      document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/d3f42a6e0dae066a16c42e55b86f1733/invoke.js"></scr' + 'ipt>');
-    `;
+    const script = document.createElement('script');
+    script.src = "//www.topcreativeformat.com/d3f42a6e0dae066a16c42e55b86f1733/invoke.js";
+    script.type = "text/javascript";
+    script.async = true;
 
-    const container2 = document.getElementById('container-for-second-ad');
-    container2.appendChild(script2);
+    const container = document.getElementById('container-for-second-ad');
+    container.appendChild(script);
 
     return () => {
-      container2.removeChild(script2);
+      container.removeChild(script);
     };
   }, []);
   return (
