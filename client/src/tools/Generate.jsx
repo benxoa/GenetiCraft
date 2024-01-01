@@ -196,9 +196,7 @@ const Generate = () => {
                 />
               )}
             </div>
-            <div id="container-for-second-ad">
-        {/* This is where the second ad will be placed */}
-      </div>
+           
 
 
 
@@ -213,9 +211,7 @@ const Generate = () => {
                 </button>
               </>
             )}
-            <div id="container-for-second-ad">
-        {/* This is where the second ad will be placed */}
-      </div>
+       
           </div>
         </main>
         <br />
