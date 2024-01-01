@@ -44,11 +44,13 @@ const Generate = () => {
   const downloadImage = () => {
     if(!cookies.Authtoken ){
       toast.error("Login Or Register to Donwlaod Image")
-    }
-    const link = document.createElement("a");
+    }else {
+      const link = document.createElement("a");
     link.href = form.photo;
     link.download = "generated_image.jpg";
     link.click();
+    }
+
 
     
   };
